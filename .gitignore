@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+*.db
+*.sqlite3
+Thumbs.db
+data/real_anonymized/*.pdf
+data/real_anonymized/*.json

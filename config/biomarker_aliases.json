@@ -1,0 +1,158 @@
+{
+  "HbA1c": {
+    "panel": "Diabetes and Glycemic",
+    "phase": "MVP",
+    "aliases": [
+      "HbA1c",
+      "Glycosylated Hemoglobin",
+      "Glycated Haemoglobin (HbA1c)",
+      "HbA1c - (HPLC)",
+      "HBA1C"
+    ],
+    "standard_unit": "%",
+    "unit_conversions": {
+      "%": { "factor": 1.0, "offset": 0.0 }
+    },
+    "trend_direction_rule": "lower_is_toward_range",
+    "comparability_warning": "Different methods (HPLC vs immunoassay) and reporting units (% vs mmol/mol) may not be directly comparable.",
+    "curated_explanation": "Measures average blood sugar levels over the past 2 to 3 months.",
+    "doctor_questions": [
+      "How does this 3-month average compare to my target glycemic range?",
+      "Do we need any adjustments to diet or routine before the next quarterly test?"
+    ]
+  },
+  "LDL": {
+    "panel": "Cholesterol and Lipids",
+    "phase": "MVP",
+    "aliases": [
+      "LDL Cholesterol",
+      "Low Density Lipoprotein",
+      "LDL-C",
+      "LDL Cholesterol - Direct",
+      "LDLCholesterol (Calculated)"
+    ],
+    "standard_unit": "mg/dL",
+    "unit_conversions": {
+      "mg/dL": { "factor": 1.0, "offset": 0.0 },
+      "mmol/L": { "factor": 38.67, "offset": 0.0 }
+    },
+    "trend_direction_rule": "lower_is_toward_range",
+    "comparability_warning": "Calculated LDL vs directly measured LDL can differ, especially when triglycerides are elevated.",
+    "curated_explanation": "Measures low-density lipoprotein, a key marker of lipid balance and cardiovascular wellness.",
+    "doctor_questions": [
+      "Was this LDL value calculated or directly measured?",
+      "How should I interpret this LDL trend alongside my HDL and Triglycerides?"
+    ]
+  },
+  "TSH": {
+    "panel": "Thyroid",
+    "phase": "MVP",
+    "aliases": [
+      "TSH",
+      "Thyroid Stimulating Hormone",
+      "TSH - Ultrasensitive",
+      "USS - TSH",
+      "Thyroid Stimulating Hormone (TSH)"
+    ],
+    "standard_unit": "uIU/mL",
+    "unit_conversions": {
+      "uIU/mL": { "factor": 1.0, "offset": 0.0 },
+      "mIU/L": { "factor": 1.0, "offset": 0.0 },
+      "µIU/mL": { "factor": 1.0, "offset": 0.0 }
+    },
+    "trend_direction_rule": "within_band",
+    "comparability_warning": "Different assay generations and lab platforms have differing reference intervals.",
+    "curated_explanation": "Regulates thyroid hormone production and overall metabolic rate.",
+    "doctor_questions": [
+      "Is this shift in TSH clinically meaningful given the lab's specific reference interval?",
+      "When should we schedule the next follow-up thyroid panel?"
+    ]
+  },
+  "Fasting Blood Glucose": {
+    "panel": "Diabetes and Glycemic",
+    "phase": "v2",
+    "aliases": ["Fasting Blood Sugar", "FBS", "Glucose - Fasting", "Plasma Glucose Fasting"],
+    "standard_unit": "mg/dL",
+    "unit_conversions": {
+      "mg/dL": { "factor": 1.0, "offset": 0.0 },
+      "mmol/L": { "factor": 18.018, "offset": 0.0 }
+    },
+    "trend_direction_rule": "within_band"
+  },
+  "Total Cholesterol": {
+    "panel": "Cholesterol and Lipids",
+    "phase": "v2",
+    "aliases": ["Total Cholesterol", "Cholesterol - Total", "Serum Cholesterol"],
+    "standard_unit": "mg/dL",
+    "unit_conversions": {
+      "mg/dL": { "factor": 1.0, "offset": 0.0 },
+      "mmol/L": { "factor": 38.67, "offset": 0.0 }
+    },
+    "trend_direction_rule": "lower_is_toward_range"
+  },
+  "HDL": {
+    "panel": "Cholesterol and Lipids",
+    "phase": "v2",
+    "aliases": ["HDL Cholesterol", "High Density Lipoprotein", "HDL-C", "Serum HDL Cholesterol"],
+    "standard_unit": "mg/dL",
+    "unit_conversions": {
+      "mg/dL": { "factor": 1.0, "offset": 0.0 },
+      "mmol/L": { "factor": 38.67, "offset": 0.0 }
+    },
+    "trend_direction_rule": "higher_is_toward_range"
+  },
+  "Triglycerides": {
+    "panel": "Cholesterol and Lipids",
+    "phase": "v2",
+    "aliases": ["Triglycerides", "Serum Triglycerides", "TG"],
+    "standard_unit": "mg/dL",
+    "unit_conversions": {
+      "mg/dL": { "factor": 1.0, "offset": 0.0 },
+      "mmol/L": { "factor": 88.57, "offset": 0.0 }
+    },
+    "trend_direction_rule": "lower_is_toward_range"
+  },
+  "Serum Creatinine": {
+    "panel": "Kidney",
+    "phase": "v2",
+    "aliases": ["Creatinine", "Serum Creatinine", "Creatinine - Serum"],
+    "standard_unit": "mg/dL",
+    "unit_conversions": {
+      "mg/dL": { "factor": 1.0, "offset": 0.0 }
+    },
+    "trend_direction_rule": "within_band",
+    "comparability_warning": "Enzymatic vs Jaffe method can yield slightly different values."
+  },
+  "ALT/SGPT": {
+    "panel": "Liver",
+    "phase": "v2",
+    "aliases": ["SGPT", "ALT", "Alanine Transaminase", "SGPT (ALT)", "Alanine Aminotransferase (ALT/SGPT)"],
+    "standard_unit": "U/L",
+    "unit_conversions": {
+      "U/L": { "factor": 1.0, "offset": 0.0 },
+      "IU/L": { "factor": 1.0, "offset": 0.0 }
+    },
+    "trend_direction_rule": "lower_is_toward_range"
+  },
+  "Vitamin D": {
+    "panel": "Vitamins",
+    "phase": "v2",
+    "aliases": ["25-OH Vitamin D (Total)", "Vitamin D Total - 25 Hydroxy", "25 Hydroxy Cholecalciferol"],
+    "standard_unit": "ng/mL",
+    "unit_conversions": {
+      "ng/mL": { "factor": 1.0, "offset": 0.0 },
+      "nmol/L": { "factor": 0.4, "offset": 0.0 }
+    },
+    "trend_direction_rule": "within_band"
+  },
+  "Vitamin B12": {
+    "panel": "Vitamins",
+    "phase": "v2",
+    "aliases": ["Vitamin B12", "Cyanocobalamin", "Serum Vitamin B12"],
+    "standard_unit": "pg/mL",
+    "unit_conversions": {
+      "pg/mL": { "factor": 1.0, "offset": 0.0 }
+    },
+    "trend_direction_rule": "within_band"
+  }
+}
