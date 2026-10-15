@@ -1,0 +1,70 @@
+{
+  "report_id": "syn_thyrocare_01",
+  "lab_name": "Thyrocare",
+  "collection_date": "21/02/2024",
+  "report_date": "22/02/2024",
+  "patient_age": 48,
+  "patient_sex": "M",
+  "biomarkers": [
+    {
+      "raw_name": "HBA1C",
+      "canonical_name": "HbA1c",
+      "raw_value": "7.5",
+      "value_operator": "=",
+      "numeric_value": 7.5,
+      "raw_unit": "%",
+      "standard_unit": "%",
+      "standard_value": 7.5,
+      "reference_range": {
+        "raw_text": "< 5.7",
+        "min_val": 0.0,
+        "max_val": 5.7
+      },
+      "method": "Immunoassay",
+      "comparable_flag": false,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "HbA1c - (HPLC) | Immunoassay | 7.5 | % | < 5.7"
+    },
+    {
+      "raw_name": "LDL Cholesterol - Direct",
+      "canonical_name": "LDL",
+      "raw_value": "108.1",
+      "value_operator": "=",
+      "numeric_value": 108.1,
+      "raw_unit": "mg/dL",
+      "standard_unit": "mg/dL",
+      "standard_value": 108.1,
+      "reference_range": {
+        "raw_text": "0 - 100",
+        "min_val": 0.0,
+        "max_val": 100.0
+      },
+      "method": "Direct",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "LDL Cholesterol | Direct | 108.1 | mg/dL | 0 - 100"
+    },
+    {
+      "raw_name": "TSH - Ultrasensitive",
+      "canonical_name": "TSH",
+      "raw_value": "1.35",
+      "value_operator": "=",
+      "numeric_value": 1.35,
+      "raw_unit": "uIU/mL",
+      "standard_unit": "uIU/mL",
+      "standard_value": 1.35,
+      "reference_range": {
+        "raw_text": "0.35 - 5.50",
+        "min_val": 0.35,
+        "max_val": 5.5
+      },
+      "method": "CLIA",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "TSH - Ultrasensitive | CLIA | 1.35 | uIU/mL | 0.35 - 5.50"
+    }
+  ]
+}

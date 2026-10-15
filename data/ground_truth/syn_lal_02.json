@@ -1,0 +1,70 @@
+{
+  "report_id": "syn_lal_02",
+  "lab_name": "Dr Lal PathLabs",
+  "collection_date": "06/08/2025",
+  "report_date": "07/08/2025",
+  "patient_age": 52,
+  "patient_sex": "F",
+  "biomarkers": [
+    {
+      "raw_name": "Glycated Haemoglobin (HbA1c)",
+      "canonical_name": "HbA1c",
+      "raw_value": "5.8",
+      "value_operator": "=",
+      "numeric_value": 5.8,
+      "raw_unit": "%",
+      "standard_unit": "%",
+      "standard_value": 5.8,
+      "reference_range": {
+        "raw_text": "4.0 - 5.6",
+        "min_val": 4.0,
+        "max_val": 5.6
+      },
+      "method": "HPLC",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "Glycated Haemoglobin (HbA1c)   5.8   %   4.0 - 5.6   HPLC"
+    },
+    {
+      "raw_name": "LDLCholesterol (Calculated)",
+      "canonical_name": "LDL",
+      "raw_value": "199.9",
+      "value_operator": "=",
+      "numeric_value": 199.9,
+      "raw_unit": "mg/dL",
+      "standard_unit": "mg/dL",
+      "standard_value": 199.9,
+      "reference_range": {
+        "raw_text": "< 100",
+        "min_val": 0.0,
+        "max_val": 100.0
+      },
+      "method": "Calculated",
+      "comparable_flag": false,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "LDLCholesterol (Calculated)   199.9   mg/dL   < 100   Calculated"
+    },
+    {
+      "raw_name": "Thyroid Stimulating Hormone (TSH)",
+      "canonical_name": "TSH",
+      "raw_value": "5.08",
+      "value_operator": "=",
+      "numeric_value": 5.08,
+      "raw_unit": "uIU/mL",
+      "standard_unit": "uIU/mL",
+      "standard_value": 5.08,
+      "reference_range": {
+        "raw_text": "0.45 - 4.50",
+        "min_val": 0.45,
+        "max_val": 4.5
+      },
+      "method": "ECLIA",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "Thyroid Stimulating Hormone (TSH)   5.08   uIU/mL   0.45 - 4.50   ECLIA"
+    }
+  ]
+}

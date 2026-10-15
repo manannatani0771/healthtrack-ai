@@ -1,0 +1,70 @@
+{
+  "report_id": "syn_metropolis_01",
+  "lab_name": "Metropolis",
+  "collection_date": "22/09/2025",
+  "report_date": "23/09/2025",
+  "patient_age": 50,
+  "patient_sex": "F",
+  "biomarkers": [
+    {
+      "raw_name": "Glycosylated Hemoglobin",
+      "canonical_name": "HbA1c",
+      "raw_value": "7.6",
+      "value_operator": "=",
+      "numeric_value": 7.6,
+      "raw_unit": "%",
+      "standard_unit": "%",
+      "standard_value": 7.6,
+      "reference_range": {
+        "raw_text": "4.0 - 5.6",
+        "min_val": 4.0,
+        "max_val": 5.6
+      },
+      "method": "Immunoassay",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "Glycosylated Hemoglobin   7.6   %   4.0 - 5.6"
+    },
+    {
+      "raw_name": "Low Density Lipoprotein",
+      "canonical_name": "LDL",
+      "raw_value": "120.9",
+      "value_operator": "=",
+      "numeric_value": 120.9,
+      "raw_unit": "mg/dL",
+      "standard_unit": "mg/dL",
+      "standard_value": 120.9,
+      "reference_range": {
+        "raw_text": "0 - 99",
+        "min_val": 0.0,
+        "max_val": 99.0
+      },
+      "method": "Direct",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "Low Density Lipoprotein   120.9   mg/dL   0 - 99"
+    },
+    {
+      "raw_name": "TSH",
+      "canonical_name": "TSH",
+      "raw_value": "2.4",
+      "value_operator": "=",
+      "numeric_value": 2.4,
+      "raw_unit": "mIU/L",
+      "standard_unit": "uIU/mL",
+      "standard_value": 2.4,
+      "reference_range": {
+        "raw_text": "0.27 - 4.20",
+        "min_val": 0.27,
+        "max_val": 4.2
+      },
+      "method": "CMIA",
+      "comparable_flag": true,
+      "comparability_note": null,
+      "page_number": 1,
+      "source_line_text": "TSH   2.4   mIU/L   0.27 - 4.20"
+    }
+  ]
+}
