@@ -16,15 +16,15 @@
       "standard_unit": "%",
       "standard_value": 6.7,
       "reference_range": {
-        "raw_text": "4.0 - 5.6",
-        "min_val": 4.0,
-        "max_val": 5.6
+        "raw_text": "< 5.7",
+        "min_val": 0.0,
+        "max_val": 5.7
       },
       "method": "Immunoassay",
-      "comparable_flag": true,
+      "comparable_flag": false,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "Glycosylated Hemoglobin   6.7   %   4.0 - 5.6"
+      "source_line_text": "Glycosylated Hemoglobin 6.7 % < 5.7"
     },
     {
       "raw_name": "Low Density Lipoprotein",
@@ -36,15 +36,15 @@
       "standard_unit": "mg/dL",
       "standard_value": 101.9,
       "reference_range": {
-        "raw_text": "0 - 99",
+        "raw_text": "0 - 100",
         "min_val": 0.0,
-        "max_val": 99.0
+        "max_val": 100.0
       },
       "method": "Direct",
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "Low Density Lipoprotein   101.9   mg/dL   0 - 99"
+      "source_line_text": "Low Density Lipoprotein 101.9 mg/dL 0 - 100"
     },
     {
       "raw_name": "TSH",
@@ -56,15 +56,15 @@
       "standard_unit": "uIU/mL",
       "standard_value": 2.94,
       "reference_range": {
-        "raw_text": "0.27 - 4.20",
-        "min_val": 0.27,
-        "max_val": 4.2
+        "raw_text": "0.35 - 5.50",
+        "min_val": 0.35,
+        "max_val": 5.5
       },
-      "method": "CMIA",
+      "method": "CLIA",
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "TSH   <2.94   mIU/L   0.27 - 4.20"
+      "source_line_text": "TSH <2.94 mIU/L 0.35 - 5.50"
     }
   ]
 }

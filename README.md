@@ -18,5 +18,6 @@ A local-first, privacy-focused health tracking pipeline built to help individual
 ## 🏗️ Build Progress
 - [x] **Day 1:** Repository setup, Ground-Truth Pydantic schema (`src/schema.py`), Indian lab biomarker alias & unit conversion table (`config/biomarker_aliases.json`), and unit tests (`pytest`).
 - [x] **Day 2:** Synthetic Indian lab PDF generator (Thyrocare, Dr Lal PathLabs, Metropolis layouts).
-- [ ] **Day 3:** Ground-Truth JSON dataset generation & edge-case injection (`<0.5`, `>200`, `DD/MM/YYYY`).
+- [x] **Day 3:** Ground-Truth JSON dataset generation & edge-case injection (`<0.5`, `>200`, `DD/MM/YYYY`).
+
 

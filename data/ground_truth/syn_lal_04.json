@@ -16,15 +16,15 @@
       "standard_unit": "%",
       "standard_value": 5.6,
       "reference_range": {
-        "raw_text": "4.0 - 5.6",
-        "min_val": 4.0,
-        "max_val": 5.6
+        "raw_text": "< 5.7",
+        "min_val": 0.0,
+        "max_val": 5.7
       },
       "method": "HPLC",
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "Glycated Haemoglobin (HbA1c)   5.6   %   4.0 - 5.6   HPLC"
+      "source_line_text": "Glycated Haemoglobin (HbA1c) 5.6 % < 5.7"
     },
     {
       "raw_name": "LDLCholesterol (Calculated)",
@@ -36,7 +36,7 @@
       "standard_unit": "mg/dL",
       "standard_value": 142.4,
       "reference_range": {
-        "raw_text": "< 100",
+        "raw_text": "Desirable: < 100",
         "min_val": 0.0,
         "max_val": 100.0
       },
@@ -44,7 +44,7 @@
       "comparable_flag": false,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "LDLCholesterol (Calculated)   142.4   mg/dL   < 100   Calculated"
+      "source_line_text": "LDLCholesterol (Calculated) 142.4 mg/dL Desirable: < 100"
     },
     {
       "raw_name": "Thyroid Stimulating Hormone (TSH)",
@@ -56,15 +56,15 @@
       "standard_unit": "uIU/mL",
       "standard_value": 6.42,
       "reference_range": {
-        "raw_text": "0.45 - 4.50",
+        "raw_text": "Adult: 0.45 - 4.50",
         "min_val": 0.45,
         "max_val": 4.5
       },
-      "method": "ECLIA",
+      "method": "CLIA",
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "Thyroid Stimulating Hormone (TSH)   6.42   uIU/mL   0.45 - 4.50   ECLIA"
+      "source_line_text": "Thyroid Stimulating Hormone (TSH) 6.42 uIU/mL Adult: 0.45 - 4.50"
     }
   ]
 }

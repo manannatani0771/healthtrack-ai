@@ -24,10 +24,10 @@
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "HbA1c - (HPLC) | HPLC | 6.4 | % | < 5.7"
+      "source_line_text": "HbA1c - (HPLC) 6.4 % < 5.7"
     },
     {
-      "raw_name": "LDL Cholesterol",
+      "raw_name": "LDL Cholesterol - Direct",
       "canonical_name": "LDL",
       "raw_value": "112.5",
       "value_operator": "=",
@@ -41,10 +41,10 @@
         "max_val": 100.0
       },
       "method": "Calculated",
-      "comparable_flag": true,
+      "comparable_flag": false,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "LDL Cholesterol | Calculated | 112.5 | mg/dL | 0 - 100"
+      "source_line_text": "LDL Cholesterol - Direct 112.5 mg/dL 0 - 100"
     },
     {
       "raw_name": "TSH - Ultrasensitive",
@@ -64,7 +64,7 @@
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "TSH - Ultrasensitive | CLIA | 1.86 | uIU/mL | 0.35 - 5.50"
+      "source_line_text": "TSH - Ultrasensitive 1.86 uIU/mL 0.35 - 5.50"
     }
   ]
 }

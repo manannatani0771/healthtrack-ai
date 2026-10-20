@@ -7,7 +7,7 @@
   "patient_sex": "M",
   "biomarkers": [
     {
-      "raw_name": "HBA1C",
+      "raw_name": "HbA1c - (HPLC)",
       "canonical_name": "HbA1c",
       "raw_value": "5.1",
       "value_operator": "=",
@@ -24,7 +24,7 @@
       "comparable_flag": false,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "HbA1c - (HPLC) | Immunoassay | 5.1 | % | < 5.7"
+      "source_line_text": "HbA1c - (HPLC) 5.1 % < 5.7"
     },
     {
       "raw_name": "LDL Cholesterol - Direct",
@@ -44,7 +44,7 @@
       "comparable_flag": true,
       "comparability_note": null,
       "page_number": 1,
-      "source_line_text": "LDL Cholesterol | Direct | 164.3 | mg/dL | 0 - 100"
+      "source_line_text": "LDL Cholesterol - Direct 164.3 mg/dL 0 - 100"
     },
     {
       "raw_name": "TSH - Ultrasensitive",
@@ -63,8 +63,8 @@
       "method": "CLIA",
       "comparable_flag": true,
       "comparability_note": null,
-      "page_number": 1,
-      "source_line_text": "TSH - Ultrasensitive | CLIA | 5.66 | uIU/mL | 0.35 - 5.50"
+      "page_number": 2,
+      "source_line_text": "TSH - Ultrasensitive 5.66 uIU/mL 0.35 - 5.50"
     }
   ]
 }
