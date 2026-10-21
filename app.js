@@ -1,7 +1,5 @@
-/**
- * HealthTrack AI - Client-Side Interactive Dashboard & Verification Studio
- * Local-first, zero-dependency interactive application for Indian lab reports
- */
+// Backend API Base URL (Works whether opened from http://127.0.0.1:8000 or file:///)
+const API_BASE = window.location.protocol.startsWith("http") ? "" : "http://127.0.0.1:8000";
 
 // Curated Biomarker Database (aligned with config/biomarker_aliases.json)
 const BIOMARKER_DATABASE = {
@@ -470,7 +468,7 @@ function bindEvents() {
       });
 
       try {
-        const res = await fetch("/api/save", {
+        const res = await fetch(`${API_BASE}/api/save`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -535,27 +533,43 @@ function bindEvents() {
     });
   }
 
-  // PDF File Drag-and-Drop and Upload
+  // PDF File Drag-and-Drop and Universal File Picker Triggers
   const dropzone = document.getElementById("pdfDropzone");
   const fileInput = document.getElementById("pdfFileInput");
-  const heroUploadBtn = document.getElementById("heroUploadBtn");
   const navUploadBtn = document.getElementById("navUploadBtn");
+  const heroUploadBtn = document.getElementById("heroUploadBtn");
   const browsePdfBtn = document.getElementById("browsePdfBtn");
 
-  const openFileChooser = (e) => {
+  function openPdfPicker(e) {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
-    if (fileInput) fileInput.click();
-  };
+    if (fileInput) {
+      fileInput.value = ""; // Reset so choosing the same file triggers change event
+      fileInput.click();
+    }
+  }
 
-  if (heroUploadBtn) heroUploadBtn.addEventListener("click", openFileChooser);
-  if (navUploadBtn) navUploadBtn.addEventListener("click", openFileChooser);
-  if (browsePdfBtn) browsePdfBtn.addEventListener("click", openFileChooser);
+  if (navUploadBtn) {
+    navUploadBtn.addEventListener("click", openPdfPicker);
+  }
+
+  if (heroUploadBtn) {
+    heroUploadBtn.addEventListener("click", openPdfPicker);
+  }
+
+  if (browsePdfBtn) {
+    browsePdfBtn.addEventListener("click", openPdfPicker);
+  }
 
   if (dropzone && fileInput) {
-    dropzone.addEventListener("click", openFileChooser);
+    dropzone.addEventListener("click", (e) => {
+      if (browsePdfBtn && (e.target === browsePdfBtn || browsePdfBtn.contains(e.target))) {
+        return; // Handled by browsePdfBtn click
+      }
+      openPdfPicker(e);
+    });
 
     dropzone.addEventListener("dragover", (e) => {
       e.preventDefault();
@@ -573,7 +587,9 @@ function bindEvents() {
         handlePdfUpload(e.dataTransfer.files[0]);
       }
     });
+  }
 
+  if (fileInput) {
     fileInput.addEventListener("change", (e) => {
       if (e.target.files && e.target.files.length > 0) {
         handlePdfUpload(e.target.files[0]);
@@ -590,21 +606,24 @@ function bindEvents() {
  */
 async function handlePdfUpload(file) {
   if (!file.name.toLowerCase().endsWith(".pdf")) {
-    showToast("⚠️ Please upload a medical lab report in PDF format.");
+    showToast("⚠️ Please select a medical lab report in PDF format.");
     return;
   }
 
-  const dropzoneText = document.querySelector(".dropzone-text");
-  const origText = dropzoneText ? dropzoneText.innerHTML : "";
-  if (dropzoneText) {
-    dropzoneText.innerHTML = `<strong>Extracting "${file.name}" with pdfplumber...</strong>`;
+  const dropzoneTitle = document.querySelector(".dropzone-title");
+  const origTitle = dropzoneTitle ? dropzoneTitle.innerHTML : "";
+  if (dropzoneTitle) {
+    dropzoneTitle.innerHTML = `<strong>Extracting "${file.name}" with pdfplumber...</strong>`;
   }
+  showToast(`📄 Uploading "${file.name}" to extraction engine...`);
 
   const formData = new FormData();
   formData.append("file", file);
 
+  const fileInput = document.getElementById("pdfFileInput");
+
   try {
-    const res = await fetch("/api/upload", {
+    const res = await fetch(`${API_BASE}/api/upload`, {
       method: "POST",
       body: formData
     });
@@ -646,12 +665,15 @@ async function handlePdfUpload(file) {
 
     renderCustomReport(customReport);
     showToast(`✓ Extracted ${customReport.tests.length} biomarkers from "${file.name}"!`);
+
+    const verSection = document.getElementById("verification");
+    if (verSection) verSection.scrollIntoView({ behavior: "smooth" });
   } catch (err) {
     showToast(`⚠️ Server offline: Running local demo parser for "${file.name}".`);
-    // Graceful offline simulated parse
     renderSampleReport("thyrocare");
   } finally {
-    if (dropzoneText) dropzoneText.innerHTML = origText;
+    if (dropzoneTitle) dropzoneTitle.innerHTML = origTitle;
+    if (fileInput) fileInput.value = "";
   }
 }
 
@@ -755,9 +777,9 @@ function renderCustomReport(report) {
 async function checkBackendHealth() {
   const badge = document.getElementById("apiStatusText");
   try {
-    const res = await fetch("/api/patients");
+    const res = await fetch(`${API_BASE}/api/patients`);
     if (res.ok && badge) {
-      badge.textContent = "FastAPI & SQLite Active";
+      badge.textContent = "FastAPI Active";
     }
   } catch (e) {
     if (badge) badge.textContent = "Local Client Mode";
