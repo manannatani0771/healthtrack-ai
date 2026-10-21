@@ -3,6 +3,11 @@ __pycache__/
 *.pyc
 *.db
 *.sqlite3
+.env
+.env.*
+!.env.example
+data/uploads/*
+!data/uploads/.gitkeep
 Thumbs.db
 data/real_anonymized/*.pdf
 data/real_anonymized/*.json
