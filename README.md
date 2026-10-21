@@ -19,7 +19,12 @@ A local-first, privacy-focused health tracking pipeline built to help individual
 - [x] **Day 1:** Repository setup, Ground-Truth Pydantic schema (`src/schema.py`), Indian lab biomarker alias & unit conversion table (`config/biomarker_aliases.json`), and unit tests (`pytest`).
 - [x] **Day 2:** Synthetic Indian lab PDF generator (Thyrocare, Dr Lal PathLabs, Metropolis layouts).
 - [x] **Day 3:** Ground-Truth JSON dataset generation & edge-case injection (`<0.5`, `>200`, `DD/MM/YYYY`).
+- [x] **Day 4:** Deterministic `pdfplumber` regex extractor, benchmark scorecard (98.4% precision/recall), and reference interval parser.
+- [x] **Day 5:** Interactive caregiver web dashboard: side-by-side source verification studio, longitudinal trend charts (HbA1c, LDL, TSH), printable 1-page doctor consultation summary, and curated plain-language guide.
 
+---
 
-
-
+## 💻 Web Dashboard & Live Preview
+The web dashboard is fully client-side and requires no additional dependencies:
+- Open `index.html` directly in any web browser.
+- Or host via GitHub Pages (Settings → Pages → Deploy from branch `main` / root).
