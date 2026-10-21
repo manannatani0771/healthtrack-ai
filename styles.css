@@ -141,11 +141,12 @@ a:hover {
   font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: 9999px;
   background: var(--primary-light);
   color: #38bdf8;
   border: 1px solid rgba(56, 189, 248, 0.3);
+  white-space: nowrap;
 }
 
 .brand-subtitle {
@@ -439,47 +440,65 @@ a:hover {
 .preset-btn:hover:not(.active) {
   color: #ffffff;
   background: var(--bg-card-subtle);
+}
+
 /* Upload Dropzone Component */
 .upload-dropzone {
-  border: 2px dashed var(--border-hover);
-  background: rgba(17, 24, 39, 0.6);
+  border: 2px dashed #0ea5e9;
+  background: rgba(14, 165, 233, 0.05);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 32px 24px;
   text-align: center;
   cursor: pointer;
   transition: var(--transition);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .upload-dropzone:hover, .upload-dropzone.dragover {
-  border-color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.08);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+  border-color: #38bdf8;
+  background: rgba(14, 165, 233, 0.12);
+  box-shadow: 0 0 24px rgba(14, 165, 233, 0.25);
+  transform: translateY(-2px);
 }
 
 .dropzone-icon {
-  font-size: 2rem;
+  font-size: 2.4rem;
   line-height: 1;
 }
 
-.dropzone-text {
-  font-size: 0.95rem;
-  color: var(--text-main);
+.dropzone-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-.dropzone-browse {
-  color: #38bdf8;
-  text-decoration: underline;
-  font-weight: 600;
+.dropzone-browse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0284c7;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin: 4px 0;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
+
+.dropzone-browse-btn:hover {
+  background: #0369a1;
+  transform: scale(1.02);
 }
 
 .dropzone-hint {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-dim);
 }
 
@@ -489,11 +508,12 @@ a:hover {
   gap: 6px;
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 9999px;
   background: rgba(16, 185, 129, 0.15);
   color: #34d399;
   border: 1px solid rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
 }
 
 .api-status-dot {

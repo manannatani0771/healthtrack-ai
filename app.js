@@ -538,9 +538,24 @@ function bindEvents() {
   // PDF File Drag-and-Drop and Upload
   const dropzone = document.getElementById("pdfDropzone");
   const fileInput = document.getElementById("pdfFileInput");
+  const heroUploadBtn = document.getElementById("heroUploadBtn");
+  const navUploadBtn = document.getElementById("navUploadBtn");
+  const browsePdfBtn = document.getElementById("browsePdfBtn");
+
+  const openFileChooser = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (fileInput) fileInput.click();
+  };
+
+  if (heroUploadBtn) heroUploadBtn.addEventListener("click", openFileChooser);
+  if (navUploadBtn) navUploadBtn.addEventListener("click", openFileChooser);
+  if (browsePdfBtn) browsePdfBtn.addEventListener("click", openFileChooser);
 
   if (dropzone && fileInput) {
-    dropzone.addEventListener("click", () => fileInput.click());
+    dropzone.addEventListener("click", openFileChooser);
 
     dropzone.addEventListener("dragover", (e) => {
       e.preventDefault();
