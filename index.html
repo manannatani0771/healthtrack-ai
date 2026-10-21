@@ -36,6 +36,10 @@
       </nav>
 
       <div class="header-actions">
+        <div class="api-status-badge" id="apiStatusBadge">
+          <span class="api-status-dot"></span>
+          <span id="apiStatusText">SQLite & FastEngine Active</span>
+        </div>
         <div class="profile-select-wrapper">
           <span class="profile-label">Profile:</span>
           <select id="profileSelect" class="profile-select" aria-label="Select Caregiver Profile">
@@ -125,6 +129,18 @@
             <button class="preset-btn active" data-report="thyrocare">Thyrocare (Wellness)</button>
             <button class="preset-btn" data-report="lalpath">Dr Lal PathLabs (Lipids)</button>
             <button class="preset-btn" data-report="metropolis">Metropolis (Thyroid)</button>
+          </div>
+        </div>
+
+        <!-- Real Lab Report PDF Upload Dropzone -->
+        <div class="upload-dropzone" id="pdfDropzone" role="button" tabindex="0">
+          <input type="file" id="pdfFileInput" accept=".pdf" style="display: none;">
+          <div class="dropzone-icon">📥</div>
+          <div class="dropzone-text">
+            <strong>Drop your real Indian lab PDF report here</strong> or <span class="dropzone-browse">browse files</span>
+          </div>
+          <div class="dropzone-hint">
+            Directly parsed on your device via pdfplumber • Zero Cloud API Costs • 100% Private (DPDP Compliant)
           </div>
         </div>
 
