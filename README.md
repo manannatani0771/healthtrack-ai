@@ -3,13 +3,13 @@
 
 A local-first, privacy-focused health tracking pipeline built to help individuals and family caregivers build a clear, longitudinal understanding of medical blood-test reports—specifically engineered and benchmarked for **Indian diagnostic lab formats** (Thyrocare, Dr Lal PathLabs, Metropolis).
 
-> ⚠️ **Strictly Educational & Non-Diagnostic:** Organizes and explains recorded lab results only. No medical diagnoses, risk scores, or LLM-generated medical advice.
+> ⚠️ **Strictly Educational & Non-Diagnostic:** Organizes and explains recorded lab results only. No medical diagnoses, risk scores, treatment advice, or prescriptions.
 
 ---
 
 ## 🎯 MVP Scope (3-Week Build in Public)
 - **Evaluation Before UI:** Synthetic benchmark of 24 multi-layout Indian lab PDFs with paired Ground-Truth JSONs to measure exact field-level precision & recall.
-- **Hybrid Extraction Pipeline:** Deterministic `pdfplumber` + regex rules first, structured-output LLM fallback second, and strict regex cross-checks so the LLM **never invents a number**.
+- **Deterministic Extraction Engine:** High-precision `pdfplumber` + regex rules specifically tuned to Indian diagnostic report layouts, ensuring zero numerical discrepancies.
 - **Mandatory Source Verification:** Side-by-side verification studio highlighting the exact extracted value on the original PDF before committing to SQLite.
 - **Longitudinal Trends:** Chronological tracking for core MVP biomarkers (**HbA1c, LDL, TSH**) using neutral reference-band wording.
 - **Doctor-Ready Export:** 1-page printable consultation summary scannable in 30 seconds.
@@ -52,7 +52,7 @@ Visit **`http://127.0.0.1:8000`** in your browser.
 ### 1. Interactive Side-by-Side Verification Studio
 - Upload any medical PDF report from major Indian lab chains (Thyrocare, Dr Lal PathLabs, Metropolis).
 - Hovering or clicking any biomarker card immediately highlights its source row in the original document simulation.
-- Explicit checkbox verification ensures no AI hallucination or parsing error enters the patient's long-term health record.
+- Explicit checkbox verification ensures no parsing error or mismatch enters the patient's long-term health record.
 
 ### 2. Multi-Year Longitudinal Trend Charts
 - Interactive trend visualizer tracking **HbA1c**, **LDL Cholesterol**, and **TSH** over time.
@@ -86,8 +86,8 @@ The built-in FastAPI backend (`src/server.py`) exposes simple, documented REST e
 
 ## 🔒 Security & Privacy Architecture
 - **DPDP Act Principles:** Medical reports remain entirely on your local machine. No health records are sent to external cloud servers or used for model training.
-- **Zero API Costs:** The primary extraction engine runs locally on CPU using `pdfplumber` (₹0.00 / $0.00 per report).
-- **Safe Secret Management:** API credentials (if using optional cloud LLM fallback) are stored in `.env`, strictly excluded from git via `.gitignore`. A safe [`.env.example`](.env.example) is provided as a template.
+- **Zero API Costs & Zero Cloud Tokens:** The primary extraction engine runs locally on CPU using `pdfplumber` (₹0.00 / $0.00 per report). No third-party API keys or cloud tokens are required.
+- **Safe Local Configuration:** Server configuration is safely managed via `.env` (strictly ignored by git). A safe [`.env.example`](.env.example) is provided as a template.
 
 ---
 
