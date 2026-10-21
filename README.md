@@ -28,17 +28,59 @@ A local-first, privacy-focused health tracking pipeline built to help individual
 
 ## ⚡ Quickstart (Run Locally)
 
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+### Option A: 1-Click Windows Launcher (Recommended)
+Simply double-click **`start.bat`** in the project folder. It will:
+- Automatically resolve Python in your environment
+- Install any missing dependencies from `requirements.txt`
+- Start the local FastAPI backend server at `http://127.0.0.1:8000`
+- Open the dashboard in your default browser
 
-### 2. Launch the Application
-Run the one-command launcher:
+### Option B: Terminal Command
 ```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Launch the application
 python run.py
 ```
-This automatically initializes the local SQLite database (`data/healthtrack.db`), starts the FastAPI server at `http://127.0.0.1:8000`, and opens the dashboard in your default web browser.
+Visit **`http://127.0.0.1:8000`** in your browser.
+
+---
+
+## 🌟 Core Features
+
+### 1. Interactive Side-by-Side Verification Studio
+- Upload any medical PDF report from major Indian lab chains (Thyrocare, Dr Lal PathLabs, Metropolis).
+- Hovering or clicking any biomarker card immediately highlights its source row in the original document simulation.
+- Explicit checkbox verification ensures no AI hallucination or parsing error enters the patient's long-term health record.
+
+### 2. Multi-Year Longitudinal Trend Charts
+- Interactive trend visualizer tracking **HbA1c**, **LDL Cholesterol**, and **TSH** over time.
+- Displays printed laboratory reference bands and lab-specific methodology notes (e.g. HPLC vs Immunoassay for HbA1c, Direct vs Friedewald for LDL).
+- Uses neutral clinical phrasing (*"moved toward reference range"* or *"moved away from reference range"*) to reduce patient anxiety.
+
+### 3. Printable 1-Page Doctor Consultation Summary
+- Prepares an appointment-ready summary sheet optimized for 30-second clinician review.
+- Styled for clean black-and-white printing on standard A4 paper (`@media print` stylesheet) with browser header/footer suppression.
+
+### 4. Curated Biomarker Guide
+- Plain-language explanations for routine diagnostic biomarkers.
+- Suggested questions for your next doctor's appointment.
+- Methodological comparability warnings across different assay generations (CLIA vs ECLIA).
+
+---
+
+## 🔌 Local REST API Endpoints
+
+The built-in FastAPI backend (`src/server.py`) exposes simple, documented REST endpoints:
+
+| Endpoint | Method | Description |
+| :--- | :---: | :--- |
+| `/api/upload` | `POST` | Uploads and parses Indian lab PDF using deterministic `pdfplumber` rules. |
+| `/api/save` | `POST` | Commits verified lab report and biomarkers into local SQLite database. |
+| `/api/trends` | `GET` | Retrieves longitudinal chronological values for a selected biomarker. |
+| `/api/reports` | `GET` | Lists all historical reports saved for a patient. |
+| `/api/patients` | `GET` | Returns registered caregiver profiles (Father, Mother, Self). |
 
 ---
 
@@ -59,7 +101,7 @@ This automatically initializes the local SQLite database (`data/healthtrack.db`)
 | **Field-Level Recall** | **98.4%** | Zero missed biomarkers across MVP panels |
 | **Number Hallucinations** | **0** | Strict regex cross-validation against raw document stream |
 
-Run the benchmark scorecard anytime:
+Run the benchmark evaluation scorecard anytime:
 ```bash
 python -m src.eval.evaluate_benchmark
 ```
@@ -87,7 +129,8 @@ healthtrack-ai/
 │   └── server.py                   # FastAPI REST API & static file server
 ├── app.js                          # Client-side dynamic interactivity
 ├── index.html                      # Verification studio & longitudinal dashboard
-├── run.py                          # 1-command server launcher
+├── run.py                          # Python server launcher
+├── start.bat                       # 1-click Windows launcher
 ├── styles.css                      # Clinical design system & print stylesheet
 ├── requirements.txt                # Python dependencies
 └── .env.example                    # Environment secrets template
